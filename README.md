@@ -1,17 +1,12 @@
-#大标题  
-##中标题  
-### 小标题   ######
-### 多行文本框    
-    这是一个有多行的文本框  
-    你可以写入代码等,每行文字只要输入两个Tab再输入文字即可  
-    这里你可以输入一段代码  
-### 链接  
-[www.google.com](http://www.google.com)<br />  
-###只是显示图片  
-![github](http://github.com/unicorn.png "github")  
+### 个人网站
+    战在技术的最前线,实现新中国
+### 微博
+[http://weibo.com/shevywu?is_all=1](http://weibo.com/shevywu?is_all=1)<br />
+### 个人头像
+![吴小伟](http://tva2.sinaimg.cn/crop.0.0.100.100.180/9eb14a0bjw8evgytj5cu2j202s02st8j.jpg "吴小伟")
   
 ###想点击某个图片进入一个网页,比如我想点击github的icorn然后再进入www.github.com  
-[![image]](http://www.github.com/)  
+[![个人微博]](http://weibo.com/shevywu)
 [image]: http://github.com/github.png "github"  
   
 ### 文字被些字符包围  
