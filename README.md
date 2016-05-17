@@ -1,20 +1,15 @@
 ### 个人网站
     战在技术的最前线,实现新中国
 ### 微博XXX
-[http://weibo.com/shevywu?is_all=1](http://weibo.com/shevywu?is_all=1)<br />
+[伟仔丶取个名字也太难了](http://weibo.com/shevywu?is_all=1)<br />
 ### 个人头像
-![吴小伟](http://tva2.sinaimg.cn/crop.0.0.100.100.180/9eb14a0bjw8evgytj5cu2j202s02st8j.jpg "吴小伟")(http://weibo.com/shevywu) 
+[![吴小伟](http://tva2.sinaimg.cn/crop.0.0.100.100.180/9eb14a0bjw8evgytj5cu2j202s02st8j.jpg)](http://weibo.com/shevywu) 
   
   
 ### 文字被些字符包围  
 > 文字被些字符包围  
 > 文字被些字符包围  
   
-*aaa
-*bbb
-
-1. aaa
-2. bbb
   
 ### 引用
 > 文字被些字符包围开始  
