@@ -3,11 +3,8 @@
 ### 微博
 [http://weibo.com/shevywu?is_all=1](http://weibo.com/shevywu?is_all=1)<br />
 ### 个人头像
-![吴小伟](http://tva2.sinaimg.cn/crop.0.0.100.100.180/9eb14a0bjw8evgytj5cu2j202s02st8j.jpg "吴小伟")
+![吴小伟](http://tva2.sinaimg.cn/crop.0.0.100.100.180/9eb14a0bjw8evgytj5cu2j202s02st8j.jpg "吴小伟")(http://weibo.com/shevywu) 
   
-###想点击某个图片进入一个网页,比如我想点击github的icorn然后再进入www.github.com  
-[![个人微博]](http://weibo.com/shevywu)
-[image]: http://github.com/github.png "github"  
   
 ### 文字被些字符包围  
 > 文字被些字符包围  
