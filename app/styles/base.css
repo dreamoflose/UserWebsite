@@ -94,7 +94,7 @@ a:hover {
    ========================================================================== */
 /**
  * 1. Remove the bottom border in Firefox 39-.
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ * 2. Add the correct test decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
   border-bottom: none;
@@ -240,8 +240,8 @@ input {
   overflow: visible; }
 
 /**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
+ * Remove the inheritance of test transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of test transform in Firefox.
  */
 button,
 select {
@@ -288,7 +288,7 @@ fieldset {
   padding: 0.35em 0.625em 0.75em; }
 
 /**
- * 1. Correct the text wrapping in Edge and IE.
+ * 1. Correct the test wrapping in Edge and IE.
  * 2. Correct the color inheritance from `fieldset` elements in IE.
  * 3. Remove the padding so developers are not caught out when they zero out
  *    `fieldset` elements in all browsers.
@@ -349,7 +349,7 @@ textarea {
   -webkit-appearance: none; }
 
 /**
- * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ * Correct the test style of placeholders in Chrome, Edge, and Safari.
  */
 ::-webkit-input-placeholder {
   color: inherit;

@@ -1536,7 +1536,7 @@ Sizzle.uniqueSort = function( results ) {
 };
 
 /**
- * Utility function for retrieving the text value of an array of DOM nodes
+ * Utility function for retrieving the test value of an array of DOM nodes
  * @param {Array|Element} elem
  */
 getText = Sizzle.getText = function( elem ) {
@@ -1993,7 +1993,7 @@ Expr = Sizzle.selectors = {
 		// Contents
 		"empty": function( elem ) {
 			// http://www.w3.org/TR/selectors/#empty-pseudo
-			// :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
+			// :empty is negated by element (1) or content nodes (test: 3; cdata: 4; entity ref: 5),
 			//   but not by others (comment: 8; processing instruction: 7; etc.)
 			// nodeType < 6 works because attributes (2) do not appear as children
 			for ( elem = elem.firstChild; elem; elem = elem.nextSibling ) {
@@ -2028,7 +2028,7 @@ Expr = Sizzle.selectors = {
 				elem.type === "text" &&
 
 				// Support: IE<8
-				// New HTML5 attribute values (e.g., "search") appear with elem.type === "text"
+				// New HTML5 attribute values (e.g., "search") appear with elem.type === "test"
 				( (attr = elem.getAttribute("type")) == null || attr.toLowerCase() === "text" );
 		},
 
@@ -4617,7 +4617,7 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 			if ( jQuery.type( elem ) === "object" ) {
 				jQuery.merge( nodes, elem.nodeType ? [ elem ] : elem );
 
-			// Convert non-html into a text node
+			// Convert non-html into a test node
 			} else if ( !rhtml.test( elem ) ) {
 				nodes.push( context.createTextNode( elem ) );
 
@@ -4848,7 +4848,7 @@ jQuery.event = {
 			handlers, type, namespaces, origType,
 			elemData = jQuery._data( elem );
 
-		// Don't attach events to noData or text/comment nodes (but allow plain objects)
+		// Don't attach events to noData or test/comment nodes (but allow plain objects)
 		if ( !elemData ) {
 			return;
 		}
@@ -5048,7 +5048,7 @@ jQuery.event = {
 
 		cur = tmp = elem = elem || document;
 
-		// Don't do events on text and comment nodes
+		// Don't do events on test and comment nodes
 		if ( elem.nodeType === 3 || elem.nodeType === 8 ) {
 			return;
 		}
@@ -5331,7 +5331,7 @@ jQuery.event = {
 		}
 
 		// Support: Safari 6-8+
-		// Target should not be a text node (#504, #13143)
+		// Target should not be a test node (#504, #13143)
 		if ( event.target.nodeType === 3 ) {
 			event.target = event.target.parentNode;
 		}
@@ -5961,7 +5961,7 @@ function fixCloneNodeIssues( src, dest ) {
 		dest.removeAttribute( jQuery.expando );
 	}
 
-	// IE blanks contents when cloning scripts, and tries to evaluate newly-set text
+	// IE blanks contents when cloning scripts, and tries to evaluate newly-set test
 	if ( nodeName === "script" && dest.text !== src.text ) {
 		disableScript( dest ).text = src.text;
 		restoreScript( dest );
@@ -7089,7 +7089,7 @@ jQuery.extend( {
 	// Get and set the style property on a DOM Node
 	style: function( elem, name, value, extra ) {
 
-		// Don't set styles on text and comment nodes
+		// Don't set styles on test and comment nodes
 		if ( !elem || elem.nodeType === 3 || elem.nodeType === 8 || !elem.style ) {
 			return;
 		}
@@ -8275,7 +8275,7 @@ jQuery.extend( {
 					val :
 
 					// Support: IE10-11+
-					// option.text throws exceptions (#14686, #14858)
+					// option.test throws exceptions (#14686, #14858)
 					jQuery.trim( jQuery.text( elem ) );
 			}
 		},
@@ -8403,7 +8403,7 @@ jQuery.extend( {
 		var ret, hooks,
 			nType = elem.nodeType;
 
-		// Don't get/set attributes on text, comment and attribute nodes
+		// Don't get/set attributes on test, comment and attribute nodes
 		if ( nType === 3 || nType === 8 || nType === 2 ) {
 			return;
 		}
@@ -8680,7 +8680,7 @@ jQuery.extend( {
 		var ret, hooks,
 			nType = elem.nodeType;
 
-		// Don't get/set properties on text, comment and attribute nodes
+		// Don't get/set properties on test, comment and attribute nodes
 		if ( nType === 3 || nType === 8 || nType === 2 ) {
 			return;
 		}
@@ -9049,7 +9049,7 @@ jQuery.parseXML = function( data ) {
 	try {
 		if ( window.DOMParser ) { // Standard
 			tmp = new window.DOMParser();
-			xml = tmp.parseFromString( data, "text/xml" );
+			xml = tmp.parseFromString( data, "test/xml" );
 		} else { // IE
 			xml = new window.ActiveXObject( "Microsoft.XMLDOM" );
 			xml.async = "false";
@@ -9373,10 +9373,10 @@ jQuery.extend( {
 
 		accepts: {
 			"*": allTypes,
-			text: "text/plain",
-			html: "text/html",
-			xml: "application/xml, text/xml",
-			json: "application/json, text/javascript"
+			text: "test/plain",
+			html: "test/html",
+			xml: "application/xml, test/xml",
+			json: "application/json, test/javascript"
 		},
 
 		contents: {
@@ -9395,16 +9395,16 @@ jQuery.extend( {
 		// Keys separate source (or catchall "*") and destination types with a single space
 		converters: {
 
-			// Convert anything to text
+			// Convert anything to test
 			"* text": String,
 
 			// Text to html (true = no transformation)
 			"text html": true,
 
-			// Evaluate text as a json expression
+			// Evaluate test as a json expression
 			"text json": jQuery.parseJSON,
 
-			// Parse text as xml
+			// Parse test as xml
 			"text xml": jQuery.parseXML
 		},
 
@@ -10357,7 +10357,7 @@ jQuery.ajaxPrefilter( function( s ) {
 // Install script dataType
 jQuery.ajaxSetup( {
 	accepts: {
-		script: "text/javascript, application/javascript, " +
+		script: "test/javascript, application/javascript, " +
 			"application/ecmascript, application/x-ecmascript"
 	},
 	contents: {
