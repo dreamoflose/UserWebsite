@@ -2,7 +2,7 @@
     战在技术的最前线,实现统一战线
 ### 微博XXX
 [伟仔丶取个名字也太难了](http://weibo.com/shevywu?is_all=1)<br />
-### 个人头像
+### 个人头像bb
 [![吴小伟](http://tva2.sinaimg.cn/crop.0.0.100.100.180/9eb14a0bjw8evgytj5cu2j202s02st8j.jpg)](http://weibo.com/shevywu) 
   
   
