@@ -70,14 +70,14 @@ describe('Misc', function () {
     var el = document.createElement('div')
     new Vue({
       el: el,
-      template: '<svg><template v-for="n in list"><text>{{n}}</text></template></svg>',
+      template: '<svg><template v-for="n in list"><test>{{n}}</test></template></svg>',
       data: {
         list: [1, 2, 3]
       }
     })
     // IE inlines svg namespace
     var xmlns = /\s?xmlns=".*svg"/
-    expect(el.innerHTML.replace(xmlns, '')).toBe('<svg><text>1</text><text>2</text><text>3</text></svg>')
+    expect(el.innerHTML.replace(xmlns, '')).toBe('<svg><test>1</test><test>2</test><test>3</test></svg>')
   })
 
   // #1005

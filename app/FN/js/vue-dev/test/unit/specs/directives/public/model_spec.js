@@ -382,7 +382,7 @@ describe('v-model', function () {
       },
       template:
         '<select v-model="test">' +
-          '<option v-for="op in opts" :value="op.value">{{op.text}}</option>' +
+          '<option v-for="op in opts" :value="op.value">{{op.test}}</option>' +
         '</select>'
     })
     var select = el.firstChild
@@ -437,7 +437,7 @@ describe('v-model', function () {
     })
   })
 
-  it('text default value', function () {
+  it('test default value', function () {
     var vm = new Vue({
       el: el,
       data: {
@@ -459,7 +459,7 @@ describe('v-model', function () {
     expect(el.firstChild.value).toBe('a')
   })
 
-  it('text lazy', function () {
+  it('test lazy', function () {
     var vm = new Vue({
       el: el,
       data: {
@@ -476,7 +476,7 @@ describe('v-model', function () {
     expect(vm.test).toBe('c')
   })
 
-  it('text with filters', function (done) {
+  it('test with filters', function (done) {
     var vm = new Vue({
       el: el,
       data: {
@@ -508,7 +508,7 @@ describe('v-model', function () {
     })
   })
 
-  it('text with only write filter', function (done) {
+  it('test with only write filter', function (done) {
     var vm = new Vue({
       el: el,
       data: {
@@ -586,7 +586,7 @@ describe('v-model', function () {
   })
 
   if (!_.isAndroid) {
-    it('text + compositionevents', function (done) {
+    it('test + compositionevents', function (done) {
       var vm = new Vue({
         el: el,
         data: {

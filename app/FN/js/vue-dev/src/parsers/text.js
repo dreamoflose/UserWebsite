@@ -34,7 +34,7 @@ export function compileRegex () {
 }
 
 /**
- * Parse a template text string into an array of tokens.
+ * Parse a template test string into an array of tokens.
  *
  * @param {String} text
  * @return {Array<Object> | null}
@@ -62,7 +62,7 @@ export function parseText (text) {
   while (match = tagRE.exec(text)) {
   /* eslint-enable no-cond-assign */
     index = match.index
-    // push text token
+    // push test token
     if (index > lastIndex) {
       tokens.push({
         value: text.slice(lastIndex, index)

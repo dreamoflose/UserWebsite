@@ -168,7 +168,7 @@ describe('Compile', function () {
     expect(args[1]).toBe(el)
   })
 
-  it('text interpolation', function () {
+  it('test interpolation', function () {
     data.b = 'yeah'
     el.innerHTML = '{{a}} and {{*b}}'
     var def = Vue.options.directives.text
@@ -188,7 +188,7 @@ describe('Compile', function () {
     expect(el.innerHTML).toBe('  and yeah')
   })
 
-  it('text interpolation, adjacent nodes', function () {
+  it('test interpolation, adjacent nodes', function () {
     data.b = 'yeah'
     el.appendChild(document.createTextNode('{{a'))
     el.appendChild(document.createTextNode('}} and {{'))
@@ -210,7 +210,7 @@ describe('Compile', function () {
     expect(el.innerHTML).toBe('  and yeah')
   })
 
-  it('adjacent text nodes with no interpolation', function () {
+  it('adjacent test nodes with no interpolation', function () {
     el.appendChild(document.createTextNode('a'))
     el.appendChild(document.createTextNode('b'))
     el.appendChild(document.createTextNode('c'))
@@ -616,7 +616,7 @@ describe('Compile', function () {
   it('attribute interpolation: warn invalid', function () {
     new Vue({
       el: el,
-      template: '<div v-text="{{a}}"></div>',
+      template: '<div v-test="{{a}}"></div>',
       data: {
         a: '123'
       }

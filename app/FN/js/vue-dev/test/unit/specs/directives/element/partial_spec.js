@@ -112,7 +112,7 @@ describe('Partial', function () {
       }
     })
     partialDir._teardown()
-    // the text-directive should've been removed.
+    // the test-directive should've been removed.
     expect(vm._directives.length).toBe(1)
     expect(vm._directives[0].name).toBe('partial')
     expect(vm._watchers.length).toBe(0)

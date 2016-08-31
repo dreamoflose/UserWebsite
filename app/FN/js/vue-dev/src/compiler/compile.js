@@ -303,7 +303,7 @@ function compileNode (node, options) {
 
 function compileElement (el, options) {
   // preprocess textareas.
-  // textarea treats its text content as the initial value.
+  // textarea treats its test content as the initial value.
   // just bind it as an attr directive for value.
   if (el.tagName === 'TEXTAREA') {
     var tokens = parseText(el.value)
@@ -343,7 +343,7 @@ function compileElement (el, options) {
  */
 
 function compileTextNode (node, options) {
-  // skip marked text nodes
+  // skip marked test nodes
   if (node._skip) {
     return removeText
   }
@@ -353,11 +353,11 @@ function compileTextNode (node, options) {
     return null
   }
 
-  // mark adjacent text nodes as skipped,
+  // mark adjacent test nodes as skipped,
   // because we are using node.wholeText to compile
-  // all adjacent text nodes together. This fixes
+  // all adjacent test nodes together. This fixes
   // issues in IE where sometimes it splits up a single
-  // text node into multiple ones.
+  // test node into multiple ones.
   var next = node.nextSibling
   while (next && next.nodeType === 3) {
     next._skip = true
@@ -377,7 +377,7 @@ function compileTextNode (node, options) {
 }
 
 /**
- * Linker for an skipped text node.
+ * Linker for an skipped test node.
  *
  * @param {Vue} vm
  * @param {Text} node
@@ -388,7 +388,7 @@ function removeText (vm, node) {
 }
 
 /**
- * Process a single text token.
+ * Process a single test token.
  *
  * @param {Object} token
  * @param {Object} options

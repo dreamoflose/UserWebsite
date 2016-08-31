@@ -102,7 +102,7 @@ function stringToFragment (templateString, raw) {
   var entityMatch = entityRE.test(templateString)
 
   if (!tagMatch && !entityMatch) {
-    // text only, return a single text node.
+    // test only, return a single test node.
     frag.appendChild(
       document.createTextNode(templateString)
     )

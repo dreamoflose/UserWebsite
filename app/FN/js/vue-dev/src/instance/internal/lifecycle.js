@@ -120,7 +120,7 @@ export default function (Vue) {
       this._isFragment = true
       this.$el = this._fragmentStart = el.firstChild
       this._fragmentEnd = el.lastChild
-      // set persisted text anchors to empty
+      // set persisted test anchors to empty
       if (this._fragmentStart.nodeType === 3) {
         this._fragmentStart.data = this._fragmentEnd.data = ''
       }

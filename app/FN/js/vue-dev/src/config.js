@@ -84,7 +84,7 @@ const config = {
 
   /**
    * Interpolation delimiters. Changing these would trigger
-   * the text parser to re-compile the regular expressions.
+   * the test parser to re-compile the regular expressions.
    *
    * @type {Array<String>}
    */

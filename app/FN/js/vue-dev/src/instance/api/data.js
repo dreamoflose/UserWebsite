@@ -95,7 +95,7 @@ export default function (Vue) {
   }
 
   /**
-   * Evaluate a text directive, including filters.
+   * Evaluate a test directive, including filters.
    *
    * @param {String} text
    * @param {Boolean} [asStatement]
@@ -120,7 +120,7 @@ export default function (Vue) {
   }
 
   /**
-   * Interpolate a piece of template text.
+   * Interpolate a piece of template test.
    *
    * @param {String} text
    * @return {String}

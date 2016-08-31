@@ -8,7 +8,7 @@ var App = require('./app');
 
 http.createServer(function(req, res) {
   if (req.url == '/') {
-    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Content-Type', 'test/html');
     var props = {
       items: [
         'Item 0',
@@ -32,7 +32,7 @@ http.createServer(function(req, res) {
     res.end(html);
 
   } else if (req.url == '/bundle.js') {
-    res.setHeader('Content-Type', 'text/javascript');
+    res.setHeader('Content-Type', 'test/javascript');
     browserify()
       .add('./browser.js')
       .transform(literalify.configure({

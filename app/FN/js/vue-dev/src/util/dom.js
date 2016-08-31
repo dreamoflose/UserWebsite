@@ -286,7 +286,7 @@ export function extractContent (el, asFragment) {
 }
 
 /**
- * Trim possible empty head/tail text and comment
+ * Trim possible empty head/tail test and comment
  * nodes inside a parent.
  *
  * @param {Node} node

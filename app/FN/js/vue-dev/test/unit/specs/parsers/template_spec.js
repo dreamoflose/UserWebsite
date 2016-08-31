@@ -157,7 +157,7 @@ describe('Template Parser', function () {
     expect(c.value).toBe('')
   })
 
-  it('should trim empty text nodes and comments', function () {
+  it('should trim empty test nodes and comments', function () {
     // string
     var res = parse('    <p>test</p>    ')
     expect(res.childNodes.length).toBe(1)

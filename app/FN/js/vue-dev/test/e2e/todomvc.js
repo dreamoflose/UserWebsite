@@ -23,7 +23,7 @@ casper.test.begin('todomvc', 63, function (test) {
   .then(function () {
     test.assertElementCount('.todo', 1, 'new item should be created')
     test.assertNotVisible('.todo .edit', 'new item edit box should be hidden')
-    test.assertSelectorHasText('.todo label', 'test', 'new item should have correct label text')
+    test.assertSelectorHasText('.todo label', 'test', 'new item should have correct label test')
     test.assertSelectorHasText('.todo-count strong', '1', 'remaining count should be 1')
     test.assertEvalEquals(function () {
       return __utils__.findOne('.todo .toggle').checked
@@ -41,7 +41,7 @@ casper.test.begin('todomvc', 63, function (test) {
   })
   .then(function () {
     test.assertElementCount('.todo', 2, 'should have 2 items now')
-    test.assertSelectorHasText('.todo:nth-child(2) label', 'test2', 'new item should have correct label text')
+    test.assertSelectorHasText('.todo:nth-child(2) label', 'test2', 'new item should have correct label test')
     test.assertSelectorHasText('.todo-count strong', '2', 'remaining count should be 2')
   })
 
@@ -63,7 +63,7 @@ casper.test.begin('todomvc', 63, function (test) {
   })
   .then(function () {
     test.assertElementCount('.todo', 3, 'should have 3 items now')
-    test.assertSelectorHasText('.todo:nth-child(3) label', 'test3', 'new item should have correct label text')
+    test.assertSelectorHasText('.todo:nth-child(3) label', 'test3', 'new item should have correct label test')
     test.assertSelectorHasText('.todo-count strong', '2', 'remaining count should be 2')
   })
 
@@ -188,7 +188,7 @@ casper.test.begin('todomvc', 63, function (test) {
   })
   .then(function () {
     test.assertElementCount('.todo.editing', 0, 'item should no longer be edited')
-    test.assertSelectorHasText('.todo:nth-child(1) label', 'edited!', 'item should have updated text')
+    test.assertSelectorHasText('.todo:nth-child(1) label', 'edited!', 'item should have updated test')
   })
 
   // test editing triggered by enter ----------------------------------------
@@ -202,7 +202,7 @@ casper.test.begin('todomvc', 63, function (test) {
   })
   .then(function () {
     test.assertElementCount('.todo.editing', 0, 'item should no longer be edited')
-    test.assertSelectorHasText('.todo:nth-child(1) label', 'edited again!', 'item should have updated text')
+    test.assertSelectorHasText('.todo:nth-child(1) label', 'edited again!', 'item should have updated test')
   })
 
   // test cancel ------------------------------------------------------------
@@ -216,7 +216,7 @@ casper.test.begin('todomvc', 63, function (test) {
   })
   .then(function () {
     test.assertElementCount('.todo.editing', 0, 'item should no longer be edited')
-    test.assertSelectorHasText('.todo label', 'edited again!', 'item should not have updated text')
+    test.assertSelectorHasText('.todo label', 'edited again!', 'item should not have updated test')
   })
 
   // test empty input remove ------------------------------------------------

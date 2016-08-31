@@ -1,7 +1,7 @@
 var _ = require('src/util')
-var def = require('src/directives/public/text')
+var def = require('src/directives/public/test')
 
-describe('v-text', function () {
+describe('v-test', function () {
   it('element', function () {
     var dir = {
       el: document.createElement('div')
@@ -14,7 +14,7 @@ describe('v-text', function () {
     expect(dir.el.textContent).toBe('123')
   })
 
-  it('text node', function () {
+  it('test node', function () {
     var dir = {
       el: document.createTextNode(' ')
     }

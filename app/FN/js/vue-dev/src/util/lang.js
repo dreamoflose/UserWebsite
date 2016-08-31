@@ -104,7 +104,7 @@ export function isReserved (str) {
 }
 
 /**
- * Guard text output, make sure undefined outputs
+ * Guard test output, make sure undefined outputs
  * empty string
  *
  * @param {*} value

@@ -98,7 +98,7 @@ function isReserved(str) {
 }
 
 /**
- * Guard text output, make sure undefined outputs
+ * Guard test output, make sure undefined outputs
  * empty string
  *
  * @param {*} value
@@ -743,7 +743,7 @@ function compileRegex() {
 }
 
 /**
- * Parse a template text string into an array of tokens.
+ * Parse a template test string into an array of tokens.
  *
  * @param {String} text
  * @return {Array<Object> | null}
@@ -771,7 +771,7 @@ function parseText(text) {
   while (match = tagRE.exec(text)) {
     /* eslint-enable no-cond-assign */
     index = match.index;
-    // push text token
+    // push test token
     if (index > lastIndex) {
       tokens.push({
         value: text.slice(lastIndex, index)
@@ -947,7 +947,7 @@ var config = Object.defineProperties({
 }, {
   delimiters: { /**
                  * Interpolation delimiters. Changing these would trigger
-                 * the text parser to re-compile the regular expressions.
+                 * the test parser to re-compile the regular expressions.
                  *
                  * @type {Array<String>}
                  */
@@ -1352,7 +1352,7 @@ function extractContent(el, asFragment) {
 }
 
 /**
- * Trim possible empty head/tail text and comment
+ * Trim possible empty head/tail test and comment
  * nodes inside a parent.
  *
  * @param {Node} node
@@ -3413,7 +3413,7 @@ function stringToFragment(templateString, raw) {
   var entityMatch = entityRE.test(templateString);
 
   if (!tagMatch && !entityMatch) {
-    // text only, return a single text node.
+    // test only, return a single test node.
     frag.appendChild(document.createTextNode(templateString));
   } else {
     var tag = tagMatch && tagMatch[1];
@@ -4922,7 +4922,7 @@ var model = {
    *   <select>
    *   <textarea>
    *   <input type="*">
-   *     - text
+   *     - test
    *     - checkbox
    *     - radio
    *     - number
@@ -6984,7 +6984,7 @@ function compileNode(node, options) {
 
 function compileElement(el, options) {
   // preprocess textareas.
-  // textarea treats its text content as the initial value.
+  // textarea treats its test content as the initial value.
   // just bind it as an attr directive for value.
   if (el.tagName === 'TEXTAREA') {
     var tokens = parseText(el.value);
@@ -7024,7 +7024,7 @@ function compileElement(el, options) {
  */
 
 function compileTextNode(node, options) {
-  // skip marked text nodes
+  // skip marked test nodes
   if (node._skip) {
     return removeText;
   }
@@ -7034,11 +7034,11 @@ function compileTextNode(node, options) {
     return null;
   }
 
-  // mark adjacent text nodes as skipped,
+  // mark adjacent test nodes as skipped,
   // because we are using node.wholeText to compile
-  // all adjacent text nodes together. This fixes
+  // all adjacent test nodes together. This fixes
   // issues in IE where sometimes it splits up a single
-  // text node into multiple ones.
+  // test node into multiple ones.
   var next = node.nextSibling;
   while (next && next.nodeType === 3) {
     next._skip = true;
@@ -7056,7 +7056,7 @@ function compileTextNode(node, options) {
 }
 
 /**
- * Linker for an skipped text node.
+ * Linker for an skipped test node.
  *
  * @param {Vue} vm
  * @param {Text} node
@@ -7067,7 +7067,7 @@ function removeText(vm, node) {
 }
 
 /**
- * Process a single text token.
+ * Process a single test token.
  *
  * @param {Object} token
  * @param {Object} options
@@ -8500,7 +8500,7 @@ function lifecycleMixin (Vue) {
       this._isFragment = true;
       this.$el = this._fragmentStart = el.firstChild;
       this._fragmentEnd = el.lastChild;
-      // set persisted text anchors to empty
+      // set persisted test anchors to empty
       if (this._fragmentStart.nodeType === 3) {
         this._fragmentStart.data = this._fragmentEnd.data = '';
       }
@@ -8820,7 +8820,7 @@ function dataAPI (Vue) {
   };
 
   /**
-   * Evaluate a text directive, including filters.
+   * Evaluate a test directive, including filters.
    *
    * @param {String} text
    * @param {Boolean} [asStatement]
@@ -8843,7 +8843,7 @@ function dataAPI (Vue) {
   };
 
   /**
-   * Interpolate a piece of template text.
+   * Interpolate a piece of template test.
    *
    * @param {String} text
    * @return {String}

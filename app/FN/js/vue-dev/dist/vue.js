@@ -102,7 +102,7 @@
   }
 
   /**
-   * Guard text output, make sure undefined outputs
+   * Guard test output, make sure undefined outputs
    * empty string
    *
    * @param {*} value
@@ -747,7 +747,7 @@ var directive = Object.freeze({
   }
 
   /**
-   * Parse a template text string into an array of tokens.
+   * Parse a template test string into an array of tokens.
    *
    * @param {String} text
    * @return {Array<Object> | null}
@@ -775,7 +775,7 @@ var directive = Object.freeze({
     while (match = tagRE.exec(text)) {
       /* eslint-enable no-cond-assign */
       index = match.index;
-      // push text token
+      // push test token
       if (index > lastIndex) {
         tokens.push({
           value: text.slice(lastIndex, index)
@@ -951,7 +951,7 @@ var text = Object.freeze({
   }, {
     delimiters: { /**
                    * Interpolation delimiters. Changing these would trigger
-                   * the text parser to re-compile the regular expressions.
+                   * the test parser to re-compile the regular expressions.
                    *
                    * @type {Array<String>}
                    */
@@ -1356,7 +1356,7 @@ var transition = Object.freeze({
   }
 
   /**
-   * Trim possible empty head/tail text and comment
+   * Trim possible empty head/tail test and comment
    * nodes inside a parent.
    *
    * @param {Node} node
@@ -3417,7 +3417,7 @@ var expression = Object.freeze({
     var entityMatch = entityRE.test(templateString);
 
     if (!tagMatch && !entityMatch) {
-      // text only, return a single text node.
+      // test only, return a single test node.
       frag.appendChild(document.createTextNode(templateString));
     } else {
       var tag = tagMatch && tagMatch[1];
@@ -4926,7 +4926,7 @@ var template = Object.freeze({
      *   <select>
      *   <textarea>
      *   <input type="*">
-     *     - text
+     *     - test
      *     - checkbox
      *     - radio
      *     - number
@@ -6981,7 +6981,7 @@ var template = Object.freeze({
 
   function compileElement(el, options) {
     // preprocess textareas.
-    // textarea treats its text content as the initial value.
+    // textarea treats its test content as the initial value.
     // just bind it as an attr directive for value.
     if (el.tagName === 'TEXTAREA') {
       var tokens = parseText(el.value);
@@ -7021,7 +7021,7 @@ var template = Object.freeze({
    */
 
   function compileTextNode(node, options) {
-    // skip marked text nodes
+    // skip marked test nodes
     if (node._skip) {
       return removeText;
     }
@@ -7031,11 +7031,11 @@ var template = Object.freeze({
       return null;
     }
 
-    // mark adjacent text nodes as skipped,
+    // mark adjacent test nodes as skipped,
     // because we are using node.wholeText to compile
-    // all adjacent text nodes together. This fixes
+    // all adjacent test nodes together. This fixes
     // issues in IE where sometimes it splits up a single
-    // text node into multiple ones.
+    // test node into multiple ones.
     var next = node.nextSibling;
     while (next && next.nodeType === 3) {
       next._skip = true;
@@ -7053,7 +7053,7 @@ var template = Object.freeze({
   }
 
   /**
-   * Linker for an skipped text node.
+   * Linker for an skipped test node.
    *
    * @param {Vue} vm
    * @param {Text} node
@@ -7064,7 +7064,7 @@ var template = Object.freeze({
   }
 
   /**
-   * Process a single text token.
+   * Process a single test token.
    *
    * @param {Object} token
    * @param {Object} options
@@ -8497,7 +8497,7 @@ var template = Object.freeze({
         this._isFragment = true;
         this.$el = this._fragmentStart = el.firstChild;
         this._fragmentEnd = el.lastChild;
-        // set persisted text anchors to empty
+        // set persisted test anchors to empty
         if (this._fragmentStart.nodeType === 3) {
           this._fragmentStart.data = this._fragmentEnd.data = '';
         }
@@ -8817,7 +8817,7 @@ var template = Object.freeze({
     };
 
     /**
-     * Evaluate a text directive, including filters.
+     * Evaluate a test directive, including filters.
      *
      * @param {String} text
      * @param {Boolean} [asStatement]
@@ -8840,7 +8840,7 @@ var template = Object.freeze({
     };
 
     /**
-     * Interpolate a piece of template text.
+     * Interpolate a piece of template test.
      *
      * @param {String} text
      * @return {String}

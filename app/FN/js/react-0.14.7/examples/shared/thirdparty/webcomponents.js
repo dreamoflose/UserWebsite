@@ -5328,7 +5328,7 @@ HTMLImports.addModule(function(scope) {
   var IMPORT_SELECTOR = "link[rel=" + IMPORT_LINK_TYPE + "]";
   var importParser = {
     documentSelectors: IMPORT_SELECTOR,
-    importsSelectors: [ IMPORT_SELECTOR, "link[rel=stylesheet]", "style", "script:not([type])", 'script[type="text/javascript"]' ].join(","),
+    importsSelectors: [ IMPORT_SELECTOR, "link[rel=stylesheet]", "style", "script:not([type])", 'script[type="test/javascript"]' ].join(","),
     map: {
       link: "parseLink",
       script: "parseScript",
@@ -5530,7 +5530,7 @@ HTMLImports.addModule(function(scope) {
   }
   function generateScriptDataUrl(script) {
     var scriptContent = generateScriptContent(script);
-    return "data:text/javascript;charset=utf-8," + encodeURIComponent(scriptContent);
+    return "data:test/javascript;charset=utf-8," + encodeURIComponent(scriptContent);
   }
   function generateScriptContent(script) {
     return script.textContent + generateSourceMapHint(script);

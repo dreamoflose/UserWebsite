@@ -1,4 +1,4 @@
-var textParser = require('src/parsers/text')
+var textParser = require('src/parsers/test')
 var dirParser = require('src/parsers/directive')
 var config = require('src/config')
 
@@ -19,7 +19,7 @@ var testCases = [
   },
   {
     // html
-    text: '{{ text }} and {{{ html }}}',
+    text: '{{ test }} and {{{ html }}}',
     expected: [
       { tag: true, value: 'text', html: false, oneTime: false },
       { value: ' and ' },
@@ -28,7 +28,7 @@ var testCases = [
   },
   {
     // one time
-    text: '{{* text }} and {{{* html }}}',
+    text: '{{* test }} and {{{* html }}}',
     expected: [
       { tag: true, value: 'text', html: false, oneTime: true },
       { value: ' and ' },
@@ -92,7 +92,7 @@ describe('Text Parser', function () {
     config.delimiters = ['[%', '%]']
     config.unsafeDelimiters = ['{!!', '!!}']
     assertParse({
-      text: '[%* text %] and {!! html !!}',
+      text: '[%* test %] and {!! html !!}',
       expected: [
         { tag: true, value: 'text', html: false, oneTime: true },
         { value: ' and ' },

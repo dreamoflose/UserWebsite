@@ -200,7 +200,7 @@ function load(url, successCallback, errorCallback) {
   // DOM to mirror normal script loading.
   xhr.open('GET', url, true);
   if ('overrideMimeType' in xhr) {
-    xhr.overrideMimeType('text/plain');
+    xhr.overrideMimeType('test/plain');
   }
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4) {
@@ -292,7 +292,7 @@ function loadScripts(scripts) {
 }
 
 /**
- * Find and run all script tags with type="text/jsx".
+ * Find and run all script tags with type="test/jsx".
  *
  * @internal
  */
@@ -2596,7 +2596,7 @@ process.umask = function() { return 0; };
         ComprehensionRequiresBlock: 'Comprehension must have at least one block',
         ComprehensionError: 'Comprehension Error',
         EachNotAllowed: 'Each is not supported',
-        InvalidJSXAttributeValue: 'JSX value should be either an expression or a quoted JSX text',
+        InvalidJSXAttributeValue: 'JSX value should be either an expression or a quoted JSX test',
         ExpectedJSXClosingTag: 'Expected corresponding JSX closing tag for %0',
         AdjacentJSXElements: 'Adjacent JSX elements must be wrapped in an enclosing tag',
         ConfusedAboutFunctionType: 'Unexpected token =>. It looks like ' +
@@ -9143,7 +9143,7 @@ process.umask = function() { return 0; };
             }
         }
 
-        // Treat non-entity sequences as regular text.
+        // Treat non-entity sequences as regular test.
         index = start + 1;
         return '&';
     }
@@ -9206,7 +9206,7 @@ process.umask = function() { return 0; };
 
     /**
      * Between JSX opening and closing tags (e.g. <foo>HERE</foo>), anything that
-     * is not another JSX tag and is not an expression wrapped by {} is text.
+     * is not another JSX tag and is not an expression wrapped by {} is test.
      */
     function advanceJSXChild() {
         var ch = source.charCodeAt(index);
@@ -9392,7 +9392,7 @@ process.umask = function() { return 0; };
         name = parseJSXElementName();
         // Because advance() (called by lex() called by expect()) expects there
         // to be a valid token after >, it needs to know whether to look for a
-        // standard JS token or an JSX text node
+        // standard JS token or an JSX test node
         state.inJSXChild = origInJSXChild;
         state.inJSXTag = origInJSXTag;
         expect('>');
@@ -9423,7 +9423,7 @@ process.umask = function() { return 0; };
             expect('/');
             // Because advance() (called by lex() called by expect()) expects
             // there to be a valid token after >, it needs to know whether to
-            // look for a standard JS token or an JSX text node
+            // look for a standard JS token or an JSX test node
             state.inJSXChild = origInJSXChild;
             expect('>');
             selfClosing = true;
@@ -11964,7 +11964,7 @@ function amdefine(module, requireFn) {
         }
 
         load.fromText = function (id, text) {
-            //This one is difficult because the text can/probably uses
+            //This one is difficult because the test can/probably uses
             //define, and any relative paths and requires should be relative
             //to that id was it would be found on disk. But this would require
             //bootstrapping a module/require fairly deeply from node core.
@@ -12951,7 +12951,7 @@ function move(end, state) {
 }
 
 /**
- * Appends a string of text to the buffer
+ * Appends a string of test to the buffer
  *
  * @param {string} str
  * @param {object} state
