@@ -1,46 +1,50 @@
-### 个人网站
-    战在技术的最前线,实现统一战线
-### 微博XXX
-[伟仔丶取个名字也太难了](http://weibo.com/shevywu?is_all=1)<br />
-### 个人头像bb
-[![吴小伟](http://tva2.sinaimg.cn/crop.0.0.100.100.180/9eb14a0bjw8evgytj5cu2j202s02st8j.jpg)](http://weibo.com/shevywu) 
-  
-  
-### 文字被些字符包围  
-> 文字被些字符包围  
-> 文字被些字符包围  
-  
-  
-### 引用
-> 文字被些字符包围开始  
-> > 只要再文字前面加上>空格即可  
->  > > 如果你要换行的话,新起一行,输入>空格即可,后面不接文字  
-> > > > 但> 只能放在行首才有效  
-  
-### 特殊字符处理  
-有一些特殊字符如<,#等,只要在特殊字符前面加上转义字符\即可<br />  
-你想换行的话其实可以直接用html标签\<br /\>  
+# user-website
+[![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/weswu/UserWebsite)
+[![DoneJs](https://img.shields.io/badge/donejs-passing-brightgreen.svg)](https://donejs.com)  
 
-吴小伟
-     ____
-    /\  _`\
-    \ \ \ \ \
-    \ \  _ /`
-      ____
-    / ___/
+Welcome to the user-website DoneJS application!
 
+## 安装
+```
+npm install -g donejs
+donejs add app UserWebsite
+```
 
-    (_'___________________________________________'_)
-    (_.___________________________________________._)
+## Getting started
 
-     ____                     __      __
-    /\  _`\                  /\ \    /\ \                                   __
-    \ \ \ \ \     __      ___\ \ \/'\\ \ \____    ___     ___      __      /\_\    ____
-     \ \  _ <'  /'__`\   /'___\ \ , < \ \ '__`\  / __`\ /' _ `\  /'__`\    \/\ \  /',__\
-      \ \ \ \ \/\ \ \.\_/\ \__/\ \ \\`\\ \ \ \ \/\ \ \ \/\ \/\ \/\  __/  __ \ \ \/\__, `\
-       \ \____/\ \__/.\_\ \____\\ \_\ \_\ \_,__/\ \____/\ \_\ \_\ \____\/\_\_\ \ \/\____/
-        \/___/  \/__/\/_/\/____/ \/_/\/_/\/___/  \/___/  \/_/\/_/\/____/\/_/\ \_\ \/___/
-                                                                           \ \____/
-                                                                            \/___/
-    (_'_______________________________________________________________________________'_)
-    (_.———————————————————————————————————————————————————————————————————————————————._)
+To install all dependencies, (e.g. after cloning it from a Git repository) run
+
+```
+npm install donejs -g
+npm install
+```
+
+## Running tests
+
+Tests can be run with
+
+```
+donejs test
+```
+
+## Development mode
+
+Development mode can be started with
+
+```
+donejs develop
+```
+
+## Build and production mode
+
+To build the application into a production bundle run
+
+```
+donejs build
+```
+
+In Unix environment the production application can be started like this:
+
+```
+NODE_ENV=production npm start
+```
