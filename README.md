@@ -1,50 +1,21 @@
-# user-website
-[![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/weswu/UserWebsite)
-[![DoneJs](https://img.shields.io/badge/donejs-passing-brightgreen.svg)](https://donejs.com)  
+# website
 
-Welcome to the user-website DoneJS application!
+> A Vue.js project
 
-## 安装
-```
-npm install -g donejs
-donejs add app UserWebsite
-```
+## Build Setup
 
-## Getting started
-
-To install all dependencies, (e.g. after cloning it from a Git repository) run
-
-```
-npm install donejs -g
+``` bash
+# install dependencies
 npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
 ```
 
-## Running tests
-
-Tests can be run with
-
-```
-donejs test
-```
-
-## Development mode
-
-Development mode can be started with
-
-```
-donejs develop
-```
-
-## Build and production mode
-
-To build the application into a production bundle run
-
-```
-donejs build
-```
-
-In Unix environment the production application can be started like this:
-
-```
-NODE_ENV=production npm start
-```
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
