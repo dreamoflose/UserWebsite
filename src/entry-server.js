@@ -20,10 +20,12 @@ export default context => {
     }
 
     // set router's location
+    // 手动路由切换到请求的url，即'/'
     router.push(url)
 
     // wait until router has resolved possible async hooks
     router.onReady(() => {
+      // 获取该url路由下的所有Component，这些组件定义在Vue Router中。 /src/router/index.js
       const matchedComponents = router.getMatchedComponents()
       // no matched routes
       if (!matchedComponents.length) {
@@ -33,6 +35,7 @@ export default context => {
       // A preFetch hook dispatches a store action and returns a Promise,
       // which is resolved when the action is complete and store state has been
       // updated.
+      // 使用Promise.all执行匹配到的Component的asyncData方法，即预取数据
       Promise.all(matchedComponents.map(({ asyncData }) => asyncData && asyncData({
         store,
         route: router.currentRoute
@@ -44,7 +47,9 @@ export default context => {
         // inline the state in the HTML response. This allows the client-side
         // store to pick-up the server-side state without having to duplicate
         // the initial data fetching on the client.
+        // 把vuex的state设置到传入的context.initialState上
         context.state = store.state
+        // 返回state, router已经设置好的Vue实例app
         resolve(app)
       }).catch(reject)
     }, reject)

@@ -6,7 +6,7 @@ const logRequests = !!process.env.DEBUG_API
 const api = createAPI({
   version: '/v0',
   config: {
-    databaseURL: 'https://hacker-news.firebaseio.com'
+    databaseURL: 'https://shevy-av.firebaseio.com'
   }
 })
 
@@ -57,6 +57,10 @@ export function fetchItems (ids) {
 
 export function fetchUser (id) {
   return fetch(`user/${id}`)
+}
+
+export function fetchActors () {
+  return fetch(`actor`)
 }
 
 export function watchList (type, cb) {

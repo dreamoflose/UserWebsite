@@ -52,6 +52,8 @@ module.exports = function setupDevServer (app, templatePath, cb) {
     noInfo: true
   })
   app.use(devMiddleware)
+  // 在client webpack结合vue-ssr-webpack-plugin完成编译后，获取devMiddleware的fileSystem
+  // 读取内存中的bundle 并通过传入的回调更新server.js中的bundle
   clientCompiler.plugin('done', stats => {
     stats = stats.toJson()
     stats.errors.forEach(err => console.error(err))
@@ -69,8 +71,10 @@ module.exports = function setupDevServer (app, templatePath, cb) {
 
   // watch and update server renderer
   const serverCompiler = webpack(serverConfig)
+  // 获取基于memory-fs创建的内存文件系统对象
   const mfs = new MFS()
   serverCompiler.outputFileSystem = mfs
+  // 设置文件重新编译监听并通过传入的回调更新server.js中的bundle
   serverCompiler.watch({}, (err, stats) => {
     if (err) throw err
     stats = stats.toJson()

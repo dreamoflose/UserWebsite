@@ -10,8 +10,9 @@
     <transition :name="transition">
       <div class="news-list" :key="displayedPage" v-if="displayedPage > 0">
         <transition-group tag="ul" name="item">
-          <item v-for="item in displayedItems" :key="item.id" :item="item">
-          </item>
+          <div v-for="item in actors" :key="item.id" :item="item">
+            {{item}}
+          </div>
         </transition-group>
       </div>
     </transition>
@@ -19,14 +20,9 @@
 </template>
 
 <script>
-import { watchList } from '../api'
-import Item from '../components/Item.vue'
-
+import { watchList } from '../../api'
 export default {
-  name: 'item-list',
-  components: {
-    Item
-  },
+  name: 'actors',
   props: {
     type: String
   },
@@ -34,7 +30,7 @@ export default {
     return {
       transition: 'slide-right',
       displayedPage: Number(this.$route.params.page) || 1,
-      displayedItems: this.$store.getters.activeItems
+      actors: this.$store.getters.actors
     }
   },
 
@@ -43,8 +39,8 @@ export default {
       return Number(this.$route.params.page) || 1
     },
     maxPage () {
-      const { itemsPerPage, lists } = this.$store.state
-      return Math.ceil(lists[this.type].length / itemsPerPage)
+      const { itemsPerPage, actors } = this.$store.state
+      return Math.ceil(actors.length / itemsPerPage)
     },
     hasMore () {
       return this.page < this.maxPage
@@ -55,12 +51,8 @@ export default {
     if (this.$root._isMounted) {
       this.loadItems(this.page)
     }
-    // watch the current list for realtime updates
-    this.unwatchList = watchList(this.type, ids => {
-      this.$store.commit('SET_LIST', { type: this.type, ids })
-      this.$store.dispatch('ENSURE_ACTIVE_ITEMS').then(() => {
-        this.displayedItems = this.$store.getters.activeItems
-      })
+    this.$store.dispatch('FETCH_ACTORS').then(() => {
+      this.actors = this.$store.getters.actors
     })
   },
 
@@ -88,7 +80,7 @@ export default {
           ? null
           : to > from ? 'slide-left' : 'slide-right'
         this.displayedPage = to
-        this.displayedItems = this.$store.getters.activeItems
+        this.actors = this.$store.getters.activeItems
         this.$bar.finish()
       })
     }

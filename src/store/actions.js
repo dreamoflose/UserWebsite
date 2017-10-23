@@ -1,5 +1,6 @@
 import {
   fetchUser,
+  fetchActors,
   fetchItems,
   fetchIdsByType
 } from '../api'
@@ -45,5 +46,9 @@ export default {
     return state.users[id]
       ? Promise.resolve(state.users[id])
       : fetchUser(id).then(user => commit('SET_USER', { id, user }))
+  },
+
+  FETCH_ACTORS: ({ commit, state }) => {
+    return fetchActors().then(items => commit('SET_ACTORS', items))
   }
 }

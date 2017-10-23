@@ -19,5 +19,7 @@ export default {
   // this Array may not be fully fetched.
   activeItems (state, getters) {
     return getters.activeIds.map(id => state.items[id]).filter(_ => _)
-  }
+  },
+
+  actors: state => state.actors
 }

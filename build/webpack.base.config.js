@@ -7,6 +7,7 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
+  // 开发环境下，开启代码调试map，方便调试断点时代码寻址，推荐模式选择：cheap-module-source-map
   devtool: isProd
     ? false
     : '#cheap-module-source-map',
@@ -56,12 +57,14 @@ module.exports = {
     maxEntrypointSize: 300000,
     hints: isProd ? 'warning' : false
   },
+  // 压缩js的插件
   plugins: isProd
     ? [
         new webpack.optimize.UglifyJsPlugin({
           compress: { warnings: false }
         }),
         new webpack.optimize.ModuleConcatenationPlugin(),
+        // 从bundle中提取出特定的text到一个文件中,可以把css从js中独立抽离出来
         new ExtractTextPlugin({
           filename: 'common.[chunkhash].css'
         })

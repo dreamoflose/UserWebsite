@@ -56,6 +56,61 @@ npm run build
 npm start
 ```
 
+## 目录
+
+<pre>
+.
+├── build               // 开发生产
+├── public              // 静态资源
+├── src                 // vue源码
+  │  app.js                     # 整合 router,filters,vuex 的入口文件
+  │  App.vue                    # 根 vue 组件
+  │  entry-client.js            # client 的入口文件
+  │  entry-server.js            # server 的入口文件
+  │  index.template.html        # html 模板
+  │
+  ├─ api
+  │  create-api-client.js       # Client数据源配置
+  │  create-api-server.js       # server数据源配置
+  │  index.js                   # 数据请求API
+  │
+  ├─ components
+  │  Comment.vue                # 评论组件
+  │  Item.vue                   #
+  │  ProgressBar.vue            # 进度条组件
+  │  Spinner.vue                # 加载提示组件
+  │
+  ├─ router
+  │  index.js                   # router配置
+  │
+  ├─ store                      # Vue store模块
+  │  actions.js                 # 根级别的 action
+  │  getters.js                 # 属性接口
+  │  index.js                   # 我们组装模块并导出 store 的地方
+  │  mutations.js               # 根级别的 mutation
+  │
+  ├─ util
+  │  filters.js                 # 过滤器
+  │  title.js                   # 工具类
+  │
+  └─ views
+    CreateListView.js       # 动态生成列表界面的工厂方法
+    ItemList.vue            # List界面组件
+    ItemView.vue            # 单List项组件
+    UserView.vue            # 用户界面组件
+│   .
+├── .babelrc            //
+├── .gitignore          // 忽略的文件
+├── manifest.json       // progressive web apps配置文件
+├── package.json        // 项目配置文件
+├── README.md           // 说明
+├── server.js           // 服务端渲染
+</pre>
+
+## 参考
+[server.js源码解析](http://www.jianshu.com/p/8c7d979bedcf)
+
+
 ## License
 
 MIT
